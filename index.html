@@ -61,9 +61,9 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://yuhang-ma.github.io" target="_blank">Yuhang Ma</a><sup>1,4*</sup>,</span>
+                <a href="https://yuhang-ma.github.io" target="_blank">Yuhang Ma</a><sup>1,3*</sup>,</span>
                 <span class="author-block">
-                  <a href="https://xilanhua12138.github.io" target="_blank">Yunhao Shui</a><sup>1,3*</sup>,</span>
+                  <a href="https://xilanhua12138.github.io" target="_blank">Yunhao Shui</a><sup>1,4*</sup>,</span>
                   <span class="author-block">
                     <a href="https://scholar.google.com/citations?hl=zh-CN&user=cnOAMbUAAAAJ" target="_blank">Xiaoshi Wu</a><sup>2</sup>,</span>
                   <span class="author-block">
@@ -74,7 +74,7 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>Mizzen AI&ensp;&ensp; <sup>2</sup>CUHK MMLab&ensp;&ensp; <sup>3</sup>Shanghai Jiaotong University&ensp;&ensp; <sup>4</sup>King's College London&ensp;&ensp; <br><sup>5</sup>Shanghai AI Laboratory&ensp;&ensp; <sup>6</sup>CPII, InnoHK<br>ICCV 2025</span>
+                    <span class="author-block"><sup>1</sup>Mizzen AI&ensp;&ensp; <sup>2</sup>CUHK MMLab&ensp;&ensp; <sup>3</sup>King's College London&ensp;&ensp; <sup>4</sup>Shanghai Jiaotong University&ensp;&ensp; <br><sup>5</sup>Shanghai AI Laboratory&ensp;&ensp; <sup>6</sup>CPII, InnoHK<br>ICCV 2025</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution&ensp;&ensp; <sup>†</sup>Equal Advising</small></span>
                   </div>
 
@@ -150,12 +150,28 @@
       <div class="has-text-centered"></div>
         <img src="static/images/teaser.png" alt="Teaser Image" style="max-width:110%; height:auto; display:inline-block; transform:translateX(-5%);">
       <h2 class="subtitle has-text-centered">
-        Examples from the HPDv3 dataset with their corresponding HPSv3 scores. HPDv3 represents the first comprehensive wide-spectrum human preference dataset, designed to evaluate generative models across a wide range of prompts and scenarios.
+        We introduce <b>HPSv3</b>, a model designed to align with human preferences and <b>HPDv3</b>, a wide-spectrum human preference dataset containing both real images and generated images.
       </h2>
     </div>
   </div>
 </section>
 <!-- End teaser video -->
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-4">HPDv3 Dataset Visualization</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <b>Human Preference Dataset v3 (HPDv3)</b>, a comprehensive dataset containing <b>1.17 million</b> binary preference choices across <b>1.08 million</b> images, grouped in pairs by prompt. 
+          </p>
+          <img src="static/images/dataset/datasetvisual_3.jpg" style="max-width:110%; height:auto; display:inline-block; transform:translateX(-5%);">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -165,7 +181,7 @@
         <h1 class="title is-3">Abstract</h1>
         <div class="content has-text-justified">
           <p>
-          Evaluating text-to-image generation models requires alignment with human perception, yet existing human-centric metrics are constrained by limited data coverage, suboptimal feature extraction, and inefficient loss functions. To address these challenges, we introduce Human Preference Score v3 (HPSv3). (1) We release HPDv3, the first wide-spectrum human preference dataset integrating 1.08M text-image pairs and 1.17M annotated pairwise comparisons from state-of-the-art generative models and low to high-quality real-world images. (2) We introduce a VLM-based preference model trained using an uncertainty-aware ranking loss for fine-grained ranking.
+          Evaluating text-to-image generation models requires alignment with human perception, yet existing human-centric metrics are constrained by limited data coverage, suboptimal feature extraction, and inefficient loss functions. To address these challenges, we introduce Human Preference Score v3 (HPSv3). (1) We release HPDv3, the first wide-spectrum human preference dataset integrating <b>1.08M</b> text-image pairs and <b>1.17M</b> annotated pairwise comparisons from state-of-the-art generative models and low to high-quality real-world images. (2) We introduce a VLM-based preference model trained using an uncertainty-aware ranking loss for fine-grained ranking.
           Besides, we propose Chain-of-Human-Preference (CoHP), an iterative image refinement method that enhances quality without extra data, using HPSv3 to select the best image at each step.
           Our contributions provide a robust benchmark for full-spectrum evaluation and introduce a scalable, human-aligned approach to improving image generation quality.
           Extensive experiments demonstrate that HPSv3 serves as a robust metric for wide-spectrum image evaluation, and CoHP offers an efficient and human-aligned approach to improve image generation quality.
@@ -207,7 +223,7 @@
         <h1 class="title is-3">Model Architecture & COHP Method</h1>
         <div class="content has-text-justified">
           <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px;">
-            <img src="static/images/model_overview.png" style="max-width:45%; height:auto;">
+            <img src="static/images/model_overview.png" style="max-width:50%; height:auto;">
             <div style="border-left: 2px solid #ccc; height: 200px;"></div>
             <img src="static/images/cohpoverview.png" style="max-width:50%; height:auto;">
           </div>
@@ -229,48 +245,10 @@
 <!-- End Contribution -->
 
 
-<!-- Dataset overview -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-five-fifths">
-        <h2 class="title is-4">Comparison with Related Datasets</h2>
-        <div class="content has-text-justified">
-            <img src="static/images/datasetoverview.png" style="max-width:90%; height:auto; display:block; margin: 0 auto;">
-          <p>
-HPDv3 stands as the only dataset that covers all image generation model types and both
-high quality images(HQI) and low quality images(LQI) with diverse prompts and the largest image collection. Its annotations show high
-convergence among evaluators, ensuring exceptional reliability.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Dataset Overview -->
 
 
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-five-fifths">
-        <h2 class="title is-4">Preference Prediction Accuracy</h2>
-        <div class="content has-text-justified">
-          <img src="static/images/pref_acc.png" style="max-width:45%; height:auto; display:block; margin: 0 auto;">
-          <p>
-          Preference prediction accuracy (%) on test sets of
-ImageReward, HPDv2 and HPDv3 Benchmark, with best and
-second-best results bolded and underlined. HPSv3 and HPDv3
-exhibit exceptional confidence in human preference.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-
-<section class="section hero is-small">
+<!-- <section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
@@ -286,23 +264,224 @@ each model using its recommended inference settings or via its API. The best and
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-
-<section class="section hero is-small">
+<section class="section hero is-small" style="background-color: #f9f9f9; padding: 20px;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-4">Benchmark Results Comparison</h2>
-        <div class="content has-text-justified">
-          <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px;">
-            <img src="static/images/benchmark_diff_models.png" style="max-width:48%; height:auto;">
-            <img src="static/images/metric_to_humananno.png" style="max-width:48%; height:auto;">
-          </div>
-          <p>
- HPSv3 shows
-the highest correlation with human annotation, indicating its supe-
-rior performance in reflecting human preferences.
+        <!-- Title -->
+        <h2 class="title is-4" style="color: #333; margin-bottom: 20px; font-weight: bold;">HPSv3 Benchmark</h2>
+        
+        <!-- Table -->
+        <div class="content has-text-centered">
+          <table style="width: 100%; border-collapse: collapse; margin: 20px auto; font-size: 14px;">
+            <thead>
+              <tr style="background-color: #87CEEB; color: white;">
+                <th>Models</th>
+                <th>All</th>
+                <th>Characters</th>
+                <th>Arts</th>
+                <th>Design</th>
+                <th>Architecture</th>
+                <th>Animals</th>
+                <th>Natural Scenery</th>
+                <th>Transportation</th>
+                <th>Products</th>
+                <th>Plants</th>
+                <th>Food</th>
+                <th>Science</th>
+                <th>Others</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kolors</td>
+                <td style="font-weight: bold;">10.55</td>
+                <td style="font-weight: bold;">11.79</td>
+                <td style="font-weight: bold;">10.47</td>
+                <td style="font-weight: bold;">9.87</td>
+                <td style="text-decoration: underline;">10.82</td>
+                <td style="font-weight: bold;">10.60</td>
+                <td>9.89</td>
+                <td style="text-decoration: underline;">10.68</td>
+                <td style="text-decoration: underline;">10.93</td>
+                <td style="font-weight: bold;">10.50</td>
+                <td style="font-weight: bold;">10.63</td>
+                <td style="text-decoration: underline;">11.06</td>
+                <td style="text-decoration: underline;">9.51</td>
+              </tr>
+              <tr>
+                <td>Flux-dev</td>
+                <td style="text-decoration: underline;">10.43</td>
+                <td style="text-decoration: underline;">11.70</td>
+                <td style="text-decoration: underline;">10.32</td>
+                <td>9.39</td>
+                <td style="font-weight: bold;">10.93</td>
+                <td style="text-decoration: underline;">10.38</td>
+                <td style="text-decoration: underline;">10.01</td>
+                <td style="font-weight: bold;">10.84</td>
+                <td style="font-weight: bold;">11.24</td>
+                <td style="text-decoration: underline;">10.21</td>
+                <td>10.38</td>
+                <td style="font-weight: bold;">11.24</td>
+                <td>9.16</td>
+              </tr>
+              <tr>
+                <td>Playground-v2.5</td>
+                <td>10.27</td>
+                <td>11.07</td>
+                <td>9.84</td>
+                <td style="text-decoration: underline;">9.64</td>
+                <td>10.45</td>
+                <td style="text-decoration: underline;">10.38</td>
+                <td>9.94</td>
+                <td>10.51</td>
+                <td style="text-decoration: underline;">10.62</td>
+                <td>10.15</td>
+                <td style="text-decoration: underline;">10.62</td>
+                <td>10.84</td>
+                <td>9.39</td>
+              </tr>
+              <tr>
+                <td>Infinity</td>
+                <td>10.26</td>
+                <td>11.17</td>
+                <td>9.95</td>
+                <td>9.43</td>
+                <td>10.36</td>
+                <td>9.27</td>
+                <td style="font-weight: bold;">10.11</td>
+                <td>10.36</td>
+                <td>10.59</td>
+                <td>10.08</td>
+                <td>10.30</td>
+                <td>10.59</td>
+                <td style="font-weight: bold;">9.62</td>
+              </tr>
+              <tr>
+                <td>CogView4</td>
+                <td>9.61</td>
+                <td>10.72</td>
+                <td>9.86</td>
+                <td>9.33</td>
+                <td>9.88</td>
+                <td>9.16</td>
+                <td>9.45</td>
+                <td>9.69</td>
+                <td>9.86</td>
+                <td>9.45</td>
+                <td>9.49</td>
+                <td>10.16</td>
+                <td>8.97</td>
+              </tr>
+              <tr>
+                <td>PixArt-&#931</td>
+                <td>9.37</td>
+                <td>10.08</td>
+                <td>9.07</td>
+                <td>8.41</td>
+                <td>9.83</td>
+                <td>8.86</td>
+                <td>8.87</td>
+                <td>9.44</td>
+                <td>9.47</td>
+                <td>9.52</td>
+                <td>9.73</td>
+                <td>10.35</td>
+                <td>8.58</td>
+              </tr>
+              <tr>
+                <td>Gemini 2.0 Flash</td>
+                <td>9.21</td>
+                <td>9.98</td>
+                <td>8.44</td>
+                <td>7.64</td>
+                <td>10.11</td>
+                <td>9.42</td>
+                <td>9.01</td>
+                <td>9.74</td>
+                <td>9.64</td>
+                <td>9.55</td>
+                <td>10.16</td>
+                <td>7.61</td>
+                <td>9.23</td>
+              </tr>
+              <tr>
+                <td>SDXL</td>
+                <td>8.20</td>
+                <td>8.67</td>
+                <td>7.63</td>
+                <td>7.53</td>
+                <td>8.57</td>
+                <td>8.18</td>
+                <td>7.76</td>
+                <td>8.65</td>
+                <td>8.85</td>
+                <td>8.32</td>
+                <td>8.43</td>
+                <td>8.78</td>
+                <td>7.29</td>
+              </tr>
+              <tr>
+                <td>HunyuanDit</td>
+                <td>8.19</td>
+                <td>7.96</td>
+                <td>8.11</td>
+                <td>8.28</td>
+                <td>8.71</td>
+                <td>7.24</td>
+                <td>7.86</td>
+                <td>8.33</td>
+                <td>8.55</td>
+                <td>8.28</td>
+                <td>8.31</td>
+                <td>8.48</td>
+                <td>8.20</td>
+              </tr>
+              <tr>
+                <td>SD3</td>
+                <td>5.31</td>
+                <td>6.70</td>
+                <td>5.98</td>
+                <td>5.15</td>
+                <td>5.25</td>
+                <td>4.09</td>
+                <td>5.24</td>
+                <td>4.25</td>
+                <td>5.71</td>
+                <td>5.84</td>
+                <td>6.01</td>
+                <td>5.71</td>
+                <td>4.58</td>
+              </tr>
+              <tr>
+                <td>SD2</td>
+                <td>-0.24</td>
+                <td>-0.34</td>
+                <td>-0.56</td>
+                <td>-1.35</td>
+                <td>-0.24</td>
+                <td>-0.54</td>
+                <td>-0.32</td>
+                <td>1.00</td>
+                <td>1.11</td>
+                <td>-0.01</td>
+                <td>-0.38</td>
+                <td>-0.38</td>
+                <td>-0.84</td>
+              </tr>
+
+
+              <!-- Add other rows similarly -->
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Description -->
+        <div class="content has-text-justified" style="margin-top: 20px;">
+          <p style="font-size: 16px; line-height: 1.8; color: #555;">
+
           </p>
         </div>
       </div>
@@ -311,7 +490,7 @@ rior performance in reflecting human preferences.
 </section>
 
 
-<!-- COHP Visualization -->
+
 <section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -321,49 +500,292 @@ rior performance in reflecting human preferences.
           <p>
             Chain-of-Human-Preference (CoHP) is an iterative image refinement method that enhances quality without extra data, using HPSv3 to select the best image at each step.
           </p>
-          <img src="static/images/cohp/cohp1.jpg" style="max-width:100%; height:auto; display:block; margin: 20px auto;">
-          <img src="static/images/cohp/cohp2.jpg" style="max-width:100%; height:auto; display:block; margin: 20px auto;">
-          <img src="static/images/cohp/cohp3.jpg" style="max-width:100%; height:auto; display:block; margin: 20px auto;">
+          <!-- Gallery with vertical text -->
+          <div class="gallery-container-wrapper">
+            <!-- Vertical label -->
+            <div class="vertical-label">Model-wise Preference&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sample-wise Preference</div>
+
+            <!-- Gallery Container -->
+            <div class="gallery-container">
+              <div class="gallery-track">
+                <img src="static/images/cohp/cohp-1.jpg" alt="CoHP Image 1">
+                <img src="static/images/cohp/cohp-2.jpg" alt="CoHP Image 2">
+                <img src="static/images/cohp/cohp-3.jpg" alt="CoHP Image 3">
+                <img src="static/images/cohp/cohp-4.jpg" alt="CoHP Image 4">
+                <img src="static/images/cohp/cohp-0.jpg" alt="CoHP Image 5">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End COHP Visualization -->
 
+<style>
+/* Wrapper for gallery and vertical label */
+.gallery-container-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align the vertical label and gallery to start */
+  position: relative;
+}
 
-<!-- COHP Visualization -->
+/* Vertical label */
+.vertical-label {
+  writing-mode: vertical-lr; /* Makes text vertical (right-to-left) */
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  margin-right: 15px; /* Space between text and gallery */
+  margin-top: 120px; /* Adjust to align with the center of the second and third columns */
+}
+
+/* Gallery container */
+.gallery-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Gallery track where images scroll */
+.gallery-track {
+  display: flex;
+  width: calc(300%); /* Adjust width relative to the total number of images */
+  animation: scroll 30s linear infinite;
+}
+
+/* Gallery images */
+.gallery-track img {
+  width: 33.33%; /* Adjust image width relative to container */
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* On hover: slightly zoom in */
+.gallery-track img:hover {
+  transform: scale(1.1);
+}
+
+/* Pause animation when hovered */
+.gallery-container:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+/* Keyframes for horizontal scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
+
+<!-- CoHP Visualization -->
 <section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-4">HPSv3 as Reward Model</h2>
+        <h2 class="title is-4">Comparison of CoHP using Different Human Preference Model</h2>
+        <div class="content has-text-justified">
+          <!-- Image Slider -->
+          <div class="image-slider" id="cohp-slider">
+            <button class="slider-button left" onclick="previousImage('cohp-slider')">&#9664;</button>
+            <img src="static/images/cohp-compare/cohp-1.jpg" class="slider-image" alt="Slide 1">
+            <img src="static/images/cohp-compare/cohp-2.jpg" class="slider-image" alt="Slide 2" style="display:none;">
+            <img src="static/images/cohp-compare/cohp-3.jpg" class="slider-image" alt="Slide 3" style="display:none;">
+            <img src="static/images/cohp-compare/cohp-4.jpg" class="slider-image" alt="Slide 4" style="display:none;">
+            <img src="static/images/cohp-compare/cohp-5.jpg" class="slider-image" alt="Slide 5" style="display:none;">
+            <img src="static/images/cohp-compare/cohp-0.jpg" class="slider-image" alt="Slide 0" style="display:none;">
+            <button class="slider-button right" onclick="nextImage('cohp-slider')">&#9654;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End CoHP Visualization -->
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-4">HPSv3 As Reward Model</h2>
         <div class="content has-text-justified">
           <p>
-            We utilize HPSv3 as a reward model in DanceGRPO, a reinforcement learning framework, to enhance the quality of generated images. Compared to HPSv2, HPSv3 demonstrates superior performance in improving image quality and prompt alignment, and less reward hacking.
+            We employ DanceGRPO as the reinforcement learning algorithm for image generation and use HPSv3 as the reward model to refine SD1.4.
           </p>
-          <img src="static/images/rl.jpg" style="max-width:100%; height:auto; display:block; margin: 20px auto; transform:translateX(5%);">
+          <!-- Gallery -->
+          <div class="gallery-container-alt">
+            <div class="gallery-track-alt">
+              <img src="static/images/rl-result/rl-11.png" alt="Image 1">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2">
+              <!-- Repeat images for seamless looping -->
+              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">
+              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">
+              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">
+              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">
+              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">
+              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">              <img src="static/images/rl-result/rl-11.png" alt="Image 1 Repeat">
+              <img src="static/images/rl-result/rl-22.png" alt="Image 2 Repeat">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End COHP Visualization -->
 
-<!-- COHP Visualization -->
+<style>
+/* Gallery container */
+.gallery-container-alt {
+  width: 100%; /* Full-width container */
+  overflow: hidden; /* Hide overflow content */
+  position: relative; /* Ensure internal positioning */
+  margin-top: 20px; /* Add margin */
+}
+
+/* Gallery track */
+.gallery-track-alt {
+  display: flex;
+  width: calc(400%); /* Width to fit all images (4 images in total) */
+  animation: scroll-alt 30s linear infinite; /* Smooth scrolling animation */
+}
+
+/* Gallery images */
+.gallery-track-alt img {
+  width: 25%; /* Each image takes equal space */
+  flex-shrink: 0; /* Prevent image shrinking */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scroll-alt {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
+
+
+<!-- RL Visualization -->
 <section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-4">More Results of HPSv3 as Reward Model (Stable Diffusion 1.4)</h2>
+        <h2 class="title is-4">Comparison of HPSv3 with Other Human Preference Models as Reward Model</h2>
         <div class="content has-text-justified">
-          <img src="static/images/rl_teaser.jpg" style="max-width:100%; height:auto; display:block; margin: 20px auto; transform:translateX(5%);">
+          <!-- Image Slider -->
+          <div class="image-slider" id="rl-slider">
+            <button class="slider-button left" onclick="previousImage('rl-slider')">&#9664;</button>
+            <img src="static/images/rl-compare/rl2-0.jpg" class="slider-image" alt="Slide 1">
+            <img src="static/images/rl-compare/rl2-1.jpg" class="slider-image" alt="Slide 2" style="display:none;">
+            <img src="static/images/rl-compare/rl2-2.jpg" class="slider-image" alt="Slide 3" style="display:none;">
+            <img src="static/images/rl-compare/rl2-3.jpg" class="slider-image" alt="Slide 4" style="display:none;">
+            <img src="static/images/rl-compare/rl2-4.jpg" class="slider-image" alt="Slide 5" style="display:none;">
+            <button class="slider-button right" onclick="nextImage('rl-slider')">&#9654;</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End COHP Visualization -->
+<!-- End RL Visualization -->
+
+<!-- JavaScript -->
+<script>
+  const sliders = {};
+
+  function initializeSlider(sliderId) {
+    const slider = document.querySelector(`#${sliderId}`);
+    const slides = slider.querySelectorAll('.slider-image');
+    sliders[sliderId] = {
+      currentSlide: 0,
+      slides: slides
+    };
+    showSlide(sliderId, 0);
+  }
+
+  function showSlide(sliderId, index) {
+    const { slides } = sliders[sliderId];
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+  }
+
+  function nextImage(sliderId) {
+    const slider = sliders[sliderId];
+    slider.currentSlide = (slider.currentSlide + 1) % slider.slides.length;
+    showSlide(sliderId, slider.currentSlide);
+  }
+
+  function previousImage(sliderId) {
+    const slider = sliders[sliderId];
+    slider.currentSlide = (slider.currentSlide - 1 + slider.slides.length) % slider.slides.length;
+    showSlide(sliderId, slider.currentSlide);
+  }
+
+  // Initialize all sliders
+  initializeSlider('cohp-slider');
+  initializeSlider('rl-slider');
+</script>
+
+<!-- CSS -->
+<style>
+  .image-slider {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .slider-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .slider-button.left {
+    left: 10px;
+  }
+
+  .slider-button.right {
+    right: 10px;
+  }
+
+  .slider-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+</style>
 
 
 <!--BibTex citation -->
